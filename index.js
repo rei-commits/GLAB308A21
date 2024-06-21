@@ -94,7 +94,7 @@ class Companion extends Character {
 }
 
 // Now create the main character and the companions
-const robin = new Adventurer("Robin", "Fighter")
+//const robin = new Adventurer("Robin", "Fighter")
 robin.inventory = ["sword", "potion", "artifact"]
 
 robin.companion = new Character("Leo", "cat")
@@ -125,3 +125,21 @@ class Character {
         console.log(`${this.name} rolled a ${result}`)
     }
 }
+class Adventurer extends Character {
+    static ROLES = ["Fighter", "Healer", "Wizard"];
+
+    constructor(name, role) {
+        super(name);
+        if (!Adventurer.ROLES.includes(role)) {
+            throw new Error(`Invalid role: ${role}. Choose one of: ${Adventurer.ROLES.join(", ")}`);
+        }
+        this.role = role;
+        this.inventory.push("bedroll", "50 gold coins");
+    }
+
+    scout() {
+        console.log(`${this.name} is scouting ahead...`);
+        super.roll();
+    }
+}
+
