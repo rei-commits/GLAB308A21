@@ -30,3 +30,42 @@ console.log(adventurer.companion.companion.belongings)
 adventurer.inventory.forEach(item => console.log(item))
 
 
+// Part 2
+// Define the Character class
+class Character {
+    constructor(name) {
+        this.name = name;
+        this.health = 100;
+        this.inventory = [];
+    }
+
+    roll(mod = 0) {
+        const result = Math.floor(Math.random() * 20) + 1 + mod;
+        console.log(`${this.name} rolled a ${result}.`);
+    }
+}
+
+// Create main character
+const robin = new Character("Robin")
+robin.inventory = ["sword", "potion", "artifact"]
+
+//Next companion
+robin.companion = new Character("Leo")
+robin.companion.type = "Cat"
+
+//Companion for Leo
+robin.companion.companion = new Character("Frank")
+robin.companion.companion.type = "Flea"
+robin.companion.companion.inventory = ["small hat", "sunglasses"]
+
+//Loop each item in robs inventory
+robin.inventory.forEach(item => console.log(item))
+
+//Test the roll method for rob
+robin.roll(5)
+
+//Test for Leo
+robin.companion.roll(13)
+
+//Test for Frank
+robin.companion.companion.roll(7)
