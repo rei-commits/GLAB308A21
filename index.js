@@ -109,3 +109,19 @@ robin.roll()
 robin.scout()
 robin.companion.roll()
 robin.companion.companion.roll()
+
+// Part 4: Class Uniforms
+// add static props to charac class
+class Character {
+    static MAX_HEALTH = 100
+
+    constructor(name) {
+        this.name = name
+        this.health = Character.MAX_HEALTH
+        this.inventory = []
+    }
+    roll(mod = 0) {
+        const result = Math.floor(Math.random() * 20) + 1 + mod
+        console.log(`${this.name} rolled a ${result}`)
+    }
+}
