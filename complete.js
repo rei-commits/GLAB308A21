@@ -106,3 +106,31 @@ adventurerRobin.roll();
 adventurerRobin.scout();
 adventurerRobin.companion.roll();
 adventurerRobin.companion.companion.roll();
+
+// Part 5 
+class AdventurerFactory {
+    constructor(role) {
+        if (!Adventurer.ROLES.includes(role)) {
+            throw new Error(`Invalid role: ${role}. Choose one of: ${Adventurer.ROLES.join(", ")}`);
+        }
+        this.role = role;
+        this.adventurers = [];
+    }
+
+    generate(name) {
+        const newAdventurer = new Adventurer(name, this.role);
+        this.adventurers.push(newAdventurer);
+        return newAdventurer;
+    }
+
+    findByIndex(index) {
+        return this.adventurers[index];
+    }
+
+    findByName(name) {
+        return this.adventurers.find(a => a.name === name);
+    }
+}
+
+const healerFactory = new AdventurerFactory("Healer");
+const healerRobin = healerFactory.generate("Robin");
