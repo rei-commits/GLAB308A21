@@ -92,3 +92,20 @@ class Companion extends Character {
         this.type = type
     }
 }
+
+// Now create the main character and the companions
+const robin = new Adventurer("Robin", "Fighter")
+robin.inventory = ["sword", "potion", "artifact"]
+
+robin.companion = new Character("Leo", "cat")
+
+robin.companion.companion = new Character("Frank", "Flea")
+robin.companion.companion.inventory = ["small hat", "sunglasses"]
+
+// Test using methods
+robin.inventory.forEach(item => console.log(item))
+
+robin.roll()
+robin.scout()
+robin.companion.roll()
+robin.companion.companion.roll()
