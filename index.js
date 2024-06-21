@@ -69,3 +69,26 @@ robin.companion.roll(13)
 
 //Test for Frank
 robin.companion.companion.roll(7)
+
+//Part 3
+// Creating the adventure Class
+class Adventurer extends Character {
+    constructor(name, role) {
+        super(name);
+        this.role = role;
+        this.inventory.push("bedroll", "50 gold coins")
+    }
+
+    scout() {
+        console.log(`${this.name} is scouting ahead...`)
+        super.roll()
+    }
+}
+
+// create companion class
+class Companion extends Character {
+    constructor(name, type) {
+        super(name)
+        this.type = type
+    }
+}
