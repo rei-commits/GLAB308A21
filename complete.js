@@ -135,14 +135,20 @@ class AdventurerFactory {
 const healerFactory = new AdventurerFactory("Healer");
 const healerRobin = healerFactory.generate("Robin");
 
-// Part 6: Developing Skills
-
+// Part 6: Adding more methods (duel already added in the Adventurer class)
 // Create additional adventurers for dueling
 const fighterFactory = new AdventurerFactory("Fighter");
 const wizardFactory = new AdventurerFactory("Wizard");
 
-const fighter1 = fighterFactory.generate("Fighter1");
-const healer1 = healerFactory.generate("Healer1");
-const wizard1 = wizardFactory.generate("Wizard1");
+// Generate adventurers (using factory methods to retrieve them)
+fighterFactory.generate("Fighter1");
+healerFactory.generate("Healer1");
+wizardFactory.generate("Wizard1");
 
+const fighter1 = fighterFactory.findByName("Fighter1");
+const healer1 = healerFactory.findByName("Healer1");
+const wizard1 = wizardFactory.findByName("Wizard1");
+
+// Fighter duels with Healer
 fighter1.duel(healer1);
+w
