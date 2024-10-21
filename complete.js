@@ -151,4 +151,9 @@ const wizard1 = wizardFactory.findByName("Wizard1");
 
 // Fighter duels with Healer
 fighter1.duel(healer1);
-w
+
+// Healer duels with Wizard
+healer1.duel(wizard1);
+
+// Wizard duels with Fighter
+wizard1.duel(fighter1);
