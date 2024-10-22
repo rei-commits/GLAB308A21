@@ -107,7 +107,7 @@ adventurerRobin.scout();
 adventurerRobin.companion.roll();
 adventurerRobin.companion.companion.roll();
 
-// Part 5 
+// Part 5
 class AdventurerFactory {
     constructor(role) {
         if (!Adventurer.ROLES.includes(role)) {
@@ -140,7 +140,7 @@ const healerRobin = healerFactory.generate("Robin");
 const fighterFactory = new AdventurerFactory("Fighter");
 const wizardFactory = new AdventurerFactory("Wizard");
 
-// Generate adventurers (using factory methods to retrieve them)
+// part 7:Generate adventurers (using factory methods to retrieve them)
 fighterFactory.generate("Fighter1");
 healerFactory.generate("Healer1");
 wizardFactory.generate("Wizard1");
